@@ -1,56 +1,218 @@
 <!DOCTYPE html>
-  <html lang="en">
-  <head>
-      <meta charset="UTF-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <title>Recetio - Support</title>
-      <style>
-          body { font-family: -apple-system, BlinkMacSystemFont, sans-serif; max-width: 800px; margin: 0
-  auto; padding: 20px; color: #333; }
-          h1 { color: #2c5aa0; }
-          h2 { color: #4a90e2; border-bottom: 2px solid #4a90e2; padding-bottom: 5px; }
-          .contact { background: #f8f9fa; padding: 20px; border-radius: 8px; margin: 20px 0; }
-          .email { font-weight: bold; color: #2c5aa0; }
-      </style>
-  </head>
-  <body>
-      <h1>Recetio - Support</h1>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recetio - Support</title>
+    <style>
+        body { 
+            font-family: -apple-system, BlinkMacSystemFont, sans-serif; 
+            max-width: 800px; 
+            margin: 0 auto; 
+            padding: 20px; 
+            color: #333; 
+        }
+        h1 { color: #2c5aa0; }
+        h2 { color: #4a90e2; border-bottom: 2px solid #4a90e2; padding-bottom: 5px; }
+        .contact { 
+            background: #f8f9fa; 
+            padding: 20px; 
+            border-radius: 8px; 
+            margin: 20px 0; 
+        }
+        .email { font-weight: bold; color: #2c5aa0; }
+        
+        /* Language Selector Styles */
+        .language-selector {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: white;
+            border: 2px solid #4a90e2;
+            border-radius: 8px;
+            padding: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            z-index: 1000;
+        }
+        
+        .language-selector select {
+            padding: 8px 12px;
+            font-size: 14px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            background: white;
+            cursor: pointer;
+            color: #2c5aa0;
+            font-weight: 500;
+        }
+        
+        .language-selector select:focus {
+            outline: none;
+            border-color: #4a90e2;
+        }
+        
+        .lang-content { display: none; }
+        .lang-content.active { display: block; }
+        
+        @media (max-width: 600px) {
+            .language-selector {
+                position: static;
+                margin-bottom: 20px;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Language Selector -->
+    <div class="language-selector">
+        <select id="languageSelect" onchange="changeLanguage(this.value)">
+            <option value="es">🇪🇸 Español</option>
+            <option value="en">🇬🇧 English</option>
+            <option value="pt">🇵🇹 Português</option>
+        </select>
+    </div>
 
-      <h2>Frequently Asked Questions</h2>
+    <!-- Spanish Content -->
+    <div id="content-es" class="lang-content active">
+        <h1>Recetio - Soporte</h1>
 
-      <h3>How do I sync my recipes across devices?</h3>
-      <p>Recetio automatically syncs your recipes using iCloud. Make sure you're signed in to the same iCloud
-   account on all your devices.</p>
+        <h2>Preguntas Frecuentes</h2>
 
-      <h3>How do I create a weekly menu?</h3>
-      <p>Go to the "Weekly Menu" tab and drag recipes from your collection to the desired meal slots. You can
-   also add custom text for meals.</p>
+        <h3>¿Cómo sincronizo mis recetas entre dispositivos?</h3>
+        <p>Recetio sincroniza automáticamente tus recetas usando iCloud. Asegúrate de haber iniciado sesión con la misma cuenta de iCloud en todos tus dispositivos.</p>
 
-      <h3>Can I share my recipes?</h3>
-      <p>Yes! You can share individual recipes as PDF or share shopping lists with family and friends.</p>
+        <h3>¿Cómo creo un menú semanal?</h3>
+        <p>Ve a la pestaña "Menú Semanal" y arrastra recetas de tu colección a los espacios de comida deseados. También puedes agregar texto personalizado para las comidas.</p>
 
-      <h3>How do I organize my recipes?</h3>
-      <p>Use categories and tags to organize your recipes. You can filter by favorites, categories, or search
-   by ingredients.</p>
+        <h3>¿Puedo compartir mis recetas?</h3>
+        <p>¡Sí! Puedes compartir recetas individuales como PDF o compartir listas de compras con familiares y amigos.</p>
 
-      <h2>Contact Support</h2>
-      <div class="contact">
-          <p>Need help? We're here for you!</p>
-          <p><strong>Email:</strong> <span class="email">recetiorecipes@gmail.com</span></p>
-          <p><strong>Response time:</strong> Usually within 24-48 hours</p>
-          <p><strong>Languages:</strong> Spanish, English</p>
-      </div>
+        <h3>¿Cómo organizo mis recetas?</h3>
+        <p>Usa categorías y etiquetas para organizar tus recetas. Puedes filtrar por favoritos, categorías o buscar por ingredientes.</p>
 
-      <h2>Privacy Policy</h2>
-      <p>Your data privacy is important to us. Recetio stores your recipes locally on your device and syncs
-  them securely through iCloud. We don't collect, store, or share any personal information.</p>
+        <h2>Contactar Soporte</h2>
+        <div class="contact">
+            <p>¿Necesitas ayuda? ¡Estamos aquí para ti!</p>
+            <p><strong>Email:</strong> <span class="email">recetiorecipes@gmail.com</span></p>
+            <p><strong>Tiempo de respuesta:</strong> Usualmente dentro de 24-48 horas</p>
+            <p><strong>Idiomas:</strong> Español, Inglés, Portugués</p>
+        </div>
 
-      <h2>Version Information</h2>
-      <p><strong>Current Version:</strong> 1.0</p>
-      <p><strong>Compatibility:</strong> iPhone running iOS 17.0 or later</p>
+        <h2>Política de Privacidad</h2>
+        <p>Tu privacidad de datos es importante para nosotros. Recetio almacena tus recetas localmente en tu dispositivo y las sincroniza de forma segura a través de iCloud. No recopilamos, almacenamos ni compartimos ninguna información personal.</p>
 
-      <footer style="margin-top: 40px; text-align: center; color: #666;">
-          <p>&copy; 2024 Jose Carlos Fernandez Alvarez. All rights reserved.</p>
-      </footer>
-  </body>
-  </html>
+        <h2>Información de Versión</h2>
+        <p><strong>Versión Actual:</strong> 1.0</p>
+        <p><strong>Compatibilidad:</strong> iPhone con iOS 17.0 o posterior</p>
+
+        <footer style="margin-top: 40px; text-align: center; color: #666;">
+            <p>&copy; 2025 Recetio. Todos los derechos reservados.</p>
+        </footer>
+    </div>
+
+    <!-- English Content -->
+    <div id="content-en" class="lang-content">
+        <h1>Recetio - Support</h1>
+
+        <h2>Frequently Asked Questions</h2>
+
+        <h3>How do I sync my recipes across devices?</h3>
+        <p>Recetio automatically syncs your recipes using iCloud. Make sure you're signed in to the same iCloud account on all your devices.</p>
+
+        <h3>How do I create a weekly menu?</h3>
+        <p>Go to the "Weekly Menu" tab and drag recipes from your collection to the desired meal slots. You can also add custom text for meals.</p>
+
+        <h3>Can I share my recipes?</h3>
+        <p>Yes! You can share individual recipes as PDF or share shopping lists with family and friends.</p>
+
+        <h3>How do I organize my recipes?</h3>
+        <p>Use categories and tags to organize your recipes. You can filter by favorites, categories, or search by ingredients.</p>
+
+        <h2>Contact Support</h2>
+        <div class="contact">
+            <p>Need help? We're here for you!</p>
+            <p><strong>Email:</strong> <span class="email">recetiorecipes@gmail.com</span></p>
+            <p><strong>Response time:</strong> Usually within 24-48 hours</p>
+            <p><strong>Languages:</strong> Spanish, English, Portuguese</p>
+        </div>
+
+        <h2>Privacy Policy</h2>
+        <p>Your data privacy is important to us. Recetio stores your recipes locally on your device and syncs them securely through iCloud. We don't collect, store, or share any personal information.</p>
+
+        <h2>Version Information</h2>
+        <p><strong>Current Version:</strong> 1.0</p>
+        <p><strong>Compatibility:</strong> iPhone running iOS 17.0 or later</p>
+
+        <footer style="margin-top: 40px; text-align: center; color: #666;">
+            <p>&copy; 2025 Recetio. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <!-- Portuguese Content -->
+    <div id="content-pt" class="lang-content">
+        <h1>Recetio - Suporte</h1>
+
+        <h2>Perguntas Frequentes</h2>
+
+        <h3>Como sincronizo minhas receitas entre dispositivos?</h3>
+        <p>Recetio sincroniza automaticamente suas receitas usando o iCloud. Certifique-se de estar conectado com a mesma conta do iCloud em todos os seus dispositivos.</p>
+
+        <h3>Como crio um menu semanal?</h3>
+        <p>Vá para a aba "Menu Semanal" e arraste receitas da sua coleção para os espaços de refeição desejados. Você também pode adicionar texto personalizado para as refeições.</p>
+
+        <h3>Posso compartilhar minhas receitas?</h3>
+        <p>Sim! Você pode compartilhar receitas individuais como PDF ou compartilhar listas de compras com familiares e amigos.</p>
+
+        <h3>Como organizo minhas receitas?</h3>
+        <p>Use categorias e etiquetas para organizar suas receitas. Você pode filtrar por favoritos, categorias ou pesquisar por ingredientes.</p>
+
+        <h2>Contatar Suporte</h2>
+        <div class="contact">
+            <p>Precisa de ajuda? Estamos aqui para você!</p>
+            <p><strong>Email:</strong> <span class="email">recetiorecipes@gmail.com</span></p>
+            <p><strong>Tempo de resposta:</strong> Geralmente dentro de 24-48 horas</p>
+            <p><strong>Idiomas:</strong> Espanhol, Inglês, Português</p>
+        </div>
+
+        <h2>Política de Privacidade</h2>
+        <p>Sua privacidade de dados é importante para nós. Recetio armazena suas receitas localmente no seu dispositivo e as sincroniza de forma segura através do iCloud. Não coletamos, armazenamos ou compartilhamos nenhuma informação pessoal.</p>
+
+        <h2>Informações de Versão</h2>
+        <p><strong>Versão Atual:</strong> 1.0</p>
+        <p><strong>Compatibilidade:</strong> iPhone com iOS 17.0 ou posterior</p>
+
+        <footer style="margin-top: 40px; text-align: center; color: #666;">
+            <p>&copy; 2024 Recetio. Todos os direitos reservados.</p>
+        </footer>
+    </div>
+
+    <script>
+        // Language switcher functionality
+        function changeLanguage(lang) {
+            // Hide all content
+            document.querySelectorAll('.lang-content').forEach(content => {
+                content.classList.remove('active');
+            });
+            
+            // Show selected language content
+            document.getElementById('content-' + lang).classList.add('active');
+            
+            // Update HTML lang attribute
+            document.documentElement.lang = lang;
+            
+            // Save preference to localStorage
+            localStorage.setItem('preferredLanguage', lang);
+        }
+        
+        // Load saved language preference on page load
+        window.addEventListener('DOMContentLoaded', () => {
+            const savedLang = localStorage.getItem('preferredLanguage');
+            if (savedLang) {
+                document.getElementById('languageSelect').value = savedLang;
+                changeLanguage(savedLang);
+            }
+        });
+    </script>
+</body>
+</html>
